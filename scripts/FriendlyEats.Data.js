@@ -15,36 +15,44 @@
  */
 'use strict';
 
-FriendlyEats.prototype.addRestaurant = function(data) {
+FriendlyEats.prototype.addRestaurant = function (data) {
   var collection = firebase.firestore().collection('restaurants')
   return collection.add(data)
 };
 
-FriendlyEats.prototype.getAllRestaurants = function(render) {
-  /*
-    TODO: Retrieve list of restaurants
-  */
+FriendlyEats.prototype.getAllRestaurants = function (render) {
+  var query = firebase.firestore()
+    .collection('restaurants')
+    .orderBy('avgRating', 'desc')
+    .limit(50)
+  this.getDocumentsInQuery(query, render)
 };
 
-FriendlyEats.prototype.getDocumentsInQuery = function(query, render) {
-  /*
-    TODO: Render all documents in the provided query
-  */
+FriendlyEats.prototype.getDocumentsInQuery = function (query, render) {
+  query.onSnapshot(function (snapshot) {
+    if (!snapshot.size) return render()
+
+    snapshot.docChanges.forEach(function (change) {
+      if (change.type === 'added') {
+        render(change.doc)
+      }
+    })
+  })
 };
 
-FriendlyEats.prototype.getRestaurant = function(id) {
+FriendlyEats.prototype.getRestaurant = function (id) {
   /*
     TODO: Retrieve a single restaurant
   */
 };
 
-FriendlyEats.prototype.getFilteredRestaurants = function(filters, render) {
+FriendlyEats.prototype.getFilteredRestaurants = function (filters, render) {
   /*
     TODO: Retrieve filtered list of restaurants
   */
 };
 
-FriendlyEats.prototype.addRating = function(restaurantID, rating) {
+FriendlyEats.prototype.addRating = function (restaurantID, rating) {
   /*
     TODO: Retrieve add a rating to a restaurant
   */
