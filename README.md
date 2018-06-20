@@ -44,3 +44,22 @@ Node.jsのインストール
 - Firebase認証とセキュリティルールを使用してFirestoreのデータを保護する
 - 複雑なFirestoreのクエリを書く
 
+## メモ
+
+- Firestoreのデータは、文書、コレクション、およびサブコレクションに分割
+    - https://firebase.google.com/docs/firestore/data-model
+
+
+> 警告: ドキュメントを削除しても、そのサブコレクションは削除されません。
+> サブコレクションが関連付けられているドキュメントを削除しても、そのサブコレクションは削除されません。その後もサブコレクションには、リファレンスによるアクセスが可能です。たとえば、db.collection('coll').doc('doc') によって参照されるドキュメントは存在しなくなったにもかかわらず、db.collection('coll').doc('doc').collection('subcoll').doc('subdoc') によって参照されるドキュメントは存在する場合があります。ドキュメントを削除するときにサブコレクション内のドキュメントも削除する場合は、コレクションを削除するで説明されているように、手動で削除する必要があります
+
+## 良い
+
+## 悪い
+
+- コードがES5
+
+## related
+
+- https://firebase.google.com/docs/firestore/data-model
+- https://firebase.google.com/docs/firestore/security/get-started
