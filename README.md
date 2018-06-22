@@ -1,5 +1,6 @@
 # codelabs-firestore-web
 learn https://codelabs.developers.google.com/codelabs/firestore-web/
+demo: https://codelabs-firestore-web-a3772.firebaseapp.com/restaurants/xKGcwz2opCnYgh09tAPr
 
 referenced repoitory readme
 https://github.com/firebase/friendlyeats-web
