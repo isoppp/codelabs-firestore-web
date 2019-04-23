@@ -29,7 +29,7 @@ Please follow the [Cloud Firestore Web Codelab](https://codelabs.developers.goog
 
 ## Build Status
 
-[![Build Status](https://travis-ci.org/firebase/friendlyeats-web.svg?branch=master)](https://travis-ci.org/firebase/friendlyeats-web)
+[![Build Status](https://travis-ci.org/firebase/friendlyeats-web.svg?branch=master)](https://travis-ci.org/firebase/friendlyeats-web) [![Greenkeeper badge](https://badges.greenkeeper.io/isoppp/codelabs-firestore-web.svg)](https://greenkeeper.io/)
 
 ```
 
